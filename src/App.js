@@ -24,16 +24,16 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/tracker" element={<Tracker/>}/>
-          < path="/login" element={
+          <Route path="/login" element={
             <Login/>
           }/>
-          < path="/register" element={
+          <Route path="/register" element={
             <Register/>
           }/>
-          < path="/dosage" element={
+          <Route path="/dosage" element={
             <Dosage/>
           }/>
-          </Routes>
+        </Routes>
       </div>
     </Router>
   );
