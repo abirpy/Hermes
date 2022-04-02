@@ -1,5 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
+import Login from './Components/Login'
+import Register from './Components/Register'
+import Dosage from './Components/Dosage'
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
+
+
+<<<<<<< HEAD
 import Tracker from './Components/Tracking/Tracker';
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
@@ -14,7 +25,16 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/tracker" element={<Tracker/>}/>
-        </Routes>
+          < path="/login" element={
+            <Login/>
+          }/>
+          < path="/register" element={
+            <Register/>
+          }/>
+          < path="/dosage" element={
+            <Dosage/>
+          }/>
+          </Routes>
       </div>
     </Router>
   );
