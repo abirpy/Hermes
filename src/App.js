@@ -10,7 +10,6 @@ import {
 } from "react-router-dom";
 
 
-<<<<<<< HEAD
 import Tracker from './Components/Tracking/Tracker';
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
