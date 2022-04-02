@@ -8,13 +8,13 @@ const HomeButtons = () => {
         <>
         <ButtonGroup size="lg" className="mb-2">
         <div className="mb-2">
-        <Link to = {'/patient'}>
-            <Button variant="primary" size="lg">
+        <Link to = {'/doctor'}>
+            <Button variant="warning" size="lg">
             Doctor
             </Button>{' '}
         </Link>
-        <Link to = {'/doctor'}>
-            <Button variant="primary" size="lg">
+        <Link to = {'/login'}>
+            <Button variant="warning" size="lg">
             Patient
             </Button>
         </Link>

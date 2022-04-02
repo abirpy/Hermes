@@ -8,14 +8,9 @@ import {
   Route,
   Link
 } from "react-router-dom";
-
-
 import Tracker from './Components/Tracking/Tracker';
-
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import React from 'react';
-
 import Home from './Components/Home/Home';
+import Map from './Components/Map/Map';
 
 function App() {
   return (
@@ -24,6 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/tracker" element={<Tracker/>}/>
+          <Route path="/map" element={<Map/>}/>
           <Route path="/login" element={
             <Login/>
           }/>
