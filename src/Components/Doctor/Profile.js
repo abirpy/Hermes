@@ -1,4 +1,6 @@
 import profilePic from "./profilePic.jpeg"
+import { Link } from "react-router-dom"
+import Button from 'react-bootstrap/Button'
 
 const Profile = () => {
   return (
@@ -10,7 +12,10 @@ const Profile = () => {
           <p>Age: 60</p>
           <p>Neurologist</p>
         </div>
-        <button className="btn" style={{marginTop: "6px"}}>Update Profile</button>
+        <Button variant="warning" size="lg">Update Profile</Button>"  "
+        <Link to = {'/patients'}>
+          <Button variant="warning" size="lg">Patient Lists</Button>
+        </Link>
       </div>
     </div>
   )
