@@ -17,6 +17,7 @@ function Register() {
       const onSubmit = async e => {
         e.preventDefault()
         console.log("user registered")
+        fetch('http://localhost:5000/api/')
         // Express funtion to register user goes here
     }
 
