@@ -11,6 +11,7 @@ import {
 import Tracker from './Components/Tracking/Tracker';
 import Home from './Components/Home/Home';
 import Map from './Components/Map/Map';
+import Profile from './Components/Doctor/Profile';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/" element={<Home/>}/>
           <Route path="/tracker" element={<Tracker/>}/>
           <Route path="/map" element={<Map/>}/>
+          <Route path="/profile" element={<Profile/>}/>
           <Route path="/login" element={
             <Login/>
           }/>
