@@ -26,7 +26,6 @@ function Login() {
           <LoginForm onSubmit={e => onSubmit(e)}>
             <Title>Welcome Back<span>!</span></Title>
             <Lead><u>Please sign in here</u></Lead>
-            c
             <Input onChange={e=>onChange(e)} value={password} placeholder="Password "name="password" type="password" id="password"/>
             <SubmitButton type="submit" placeholder="Submit"/>
             <Lead> Don't have an account? <Link className="hyperlink" to='/register'>Register here</Link></Lead>

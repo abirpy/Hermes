@@ -5,34 +5,32 @@ import {useState} from 'react'
 function Dosage() {
 
     const [formData, setFormData] = useState({
-        numMeds: 0,
-        meds: [],
-        dosage: [],
-        usage: []
+        meds: '',
+        dosage: '',
+        usage: ''
     })
-    const {numMeds,meds,dosage,usage} = formData
+    const {meds,dosage,usage} = formData
 
-    const onChange = e => {setFormData({[e.target.name]:[e.target.value]})
-
-    const medInputs = []
-    // for (var i = 0; i < numMeds; i++) {
-    //     medInputs.push(
-    //         <div>
-    //             <MedInput placeholder="Medication Name" name="meds" value={meds} type="text"/>
-    //             <DosageInput placeholder="Dosage in (units)" name="dosage" value={dosage} type="number"/>
-    //             <UsageInput placeholder="Usage/Day" name="usage" value={usage} type="number"/>
-    //         </div>
-    //     )
-    // }
-}
-
+    const onChange = e => setFormData({...formData,[e.target.name]:[e.target.value]})
+    const onSubmit = async e => {
+      e.preventDefault()
+      console.log(meds)
+      console.log(dosage)
+      console.log(usage)
+      // Express funtion to update med info here
+  }
   return ( 
     <ParentContainer>
         <LoginContainer>
             <Title>Enter your medication info<span>.</span></Title>
-            <Lead><u>This will be verified by your doctor.</u></Lead>
-            <Input onChange={e=>onChange(e)} value={numMeds} placeholder="How many medications do you have?" name="numMeds" type="number" id="password"/>
-
+           
+            <Lead>Enter all information as comma-separated values. <u>This will be verified by your doctor before delivery.</u></Lead> 
+            <form onSubmit={e => onSubmit(e)}>
+            <Input onChange={e=>onChange(e)} value={meds} placeholder="Medicine (e.g Atorvastatin, Levothyroxine) "name="meds" type="text" id="meds"/>
+            <Input onChange={e=>onChange(e)} value={dosage} placeholder="Dosage (mg)" name="dosage" type="text" id="dosage"/>
+            <Input onChange={e=>onChange(e)} value={usage} placeholder="How many doses per day?"name="usage" type="text" id="usage"/>
+            <SubmitButton type="submit" placeholder="Submit"/>
+            </form>
         </LoginContainer>
     </ParentContainer>
 
@@ -88,15 +86,21 @@ width: 100%;
 padding: 10px;
 margin-bottom: 10px;
 `
+const SubmitButton = styled.input`
+margin-top:10px;
+padding: 5px 35px;
+border: 1px solid white;
 
-const MedInput = styled.input`
-width: 45%;
-`
 
-const DosageInput = styled.input`
-width: 25%;
-`
+:hover{
+    background-color: #7289da;
+    transition: .3s;
+    color: white;
+    border: 1px solid #7289da;
+}
 
-const UsageInput = styled.input`
-width: 20%;
+:active{
+  transform: translateY(3px);
+  transition: 0.1s;  
+}
 `
