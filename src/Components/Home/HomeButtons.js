@@ -8,7 +8,7 @@ const HomeButtons = () => {
         <>
         <ButtonGroup size="lg" className="mb-2">
         <div className="mb-2">
-        <Link to = {'/doctor'}>
+        <Link to = {'/login'}>
             <Button variant="warning" size="lg">
             Doctor
             </Button>{' '}

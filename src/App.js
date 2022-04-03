@@ -10,7 +10,6 @@ import {
 } from "react-router-dom";
 import Tracker from './Components/Tracking/Tracker';
 import Home from './Components/Home/Home';
-import Map from './Components/Map/Map';
 import Profile from './Components/Doctor/Profile';
 import Lists from './Components/Doctor/Lists';
 
@@ -21,7 +20,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/tracker" element={<Tracker/>}/>
-          <Route path="/map" element={<Map/>}/>
           <Route path="/profile" element={<Profile/>}/>
           <Route path="/login" element={
             <Login/>
