@@ -1,6 +1,7 @@
 const express = require('express')
 const cors = require('cors')
 const dotenv = require('dotenv').config()
+const path = require('path')
 const patientRoute = require('./routes/patient')
 // const { errorHandler } = require('./middleware/errorMiddleware')
 // const connectDB = require('./config/db')
@@ -13,6 +14,8 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
+app.use(express.static('../public'))
+
 const dbo = require('./db/conn')
 
 app.use('/api/patient', patientRoute)
@@ -21,11 +24,11 @@ app.use('/api/patient', patientRoute)
 
 // to frontend
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../frontend/')))
+  app.use(express.static(__dirname))
 
   app.get('*', (req, res) =>
     res.sendFile(
-      path.resolve(__dirname, '../', 'frontend', '.html')
+      path.resolve(__dirname, '../', 'public', 'index.html')
     )
   )
 } else {
