@@ -12,6 +12,7 @@ import Tracker from './Components/Tracking/Tracker';
 import Home from './Components/Home/Home';
 import Map from './Components/Map/Map';
 import Profile from './Components/Doctor/Profile';
+import Lists from './Components/Doctor/Lists';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path="/dosage" element={
             <Dosage/>
           }/>
+          <Route path="/patients" element={<Lists/>}/>
         </Routes>
       </div>
     </Router>

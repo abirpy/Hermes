@@ -4,31 +4,49 @@ import Button from 'react-bootstrap/Button'
 
 const patientList = [{
     'name' : 'A',
-    'medicine' : {'x' : 5, 'y' : 10},
+    'drug name' :  'E',
+    'amount' :  5,
     'id' : 1
 },
 {
     'name' : 'B',
-    'medicine' : {'z' : 2, 'l' : 6},
+    'drug name' :  'F',
+    'amount' :  9,
     'id' : 2
 },
 {
     'name' : 'C',
-    'medicine' : {'m' : 3, 'n' : 7},
+    'drug name' :  'G',
+    'amount' :  15,
     'id' : 3
+},
+{
+    'name' : 'O',
+    'drug name' :  'R',
+    'amount' :  12,
+    'id' : 4
+},
+{
+    'name' : 'P',
+    'drug name' :  'S',
+    'amount' :  8,
+    'id' : 5
 },
 ]
 
-const Tracker = () => {
+const Lists = () => {
     const [patients, setPatients] = useState(
         patientList
     )
+    console.log(patients)
 
-    const handleChange = () => {
-        patientList.forEach((patient) => {
-            patient.medicine.m
+    const handleChange = (name, newP) => {
+        patients.forEach((patient) => {
+            if(patient.name === name){
+                patient.amount = newP
+            }
         })
-        setMedications([...medicineList])
+        setPatients([...patientList])
     }
     
   return (
@@ -36,23 +54,35 @@ const Tracker = () => {
     <table>
     <tr>
         <th>Name</th>
-        <th>Amount</th>
+        <th>Medicine</th>
         <th>Dosage</th>
+        <th>Change</th>
     </tr>
-    {medications.map((medicine) =>
+    {patients.map((patient) =>
         <tr>
-            <td>{medicine.name}</td>
-            <td>{medicine.amount}</td>
-            <td>{medicine.dosage}</td>
+            <td>{patient.name}</td>
+            <td>{patient['drug name']}</td>
+            <td>{patient.amount}</td>
+            <td>
+            <Button variant="warning" size="sm"
+        onClick = {() => handleChange(
+            patient.name, 13)
+            }>
+                    Change Prescription
+            </Button>
+            </td>
         </tr>
     )}
     </table>
     <br/>
-    <Button variant="warning" size="lg" onClick = {handleChange}>
-            Doctor
-    </Button>
+    {/* <Button variant="warning" size="lg" 
+        onClick = {() => handleChange(
+            'B', 14)
+    }>
+            Change Prescription
+    </Button> */}
     </>
 
 )}
 
-export default Tracker
+export default Lists

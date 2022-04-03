@@ -64,7 +64,7 @@ const Tracker = () => {
     </table>
     <br/>
     <Button variant="warning" size="lg" onClick = {handleChange}>
-            Doctor
+            Current Amount
     </Button>
     </>
 
